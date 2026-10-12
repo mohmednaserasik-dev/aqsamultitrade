@@ -1,0 +1,4 @@
+<footer class="footer"><div class="wrap footer-grid"><div><a class="logo" href="{{ routes.root_url }}">{{ settings.brand | escape }}</a><p>{{ settings.tagline | escape }}</p><p class="muted">© {{ 'now' | date: '%Y' }} {{ shop.name | escape }}. {{ 'general.copyright' | t }}</p></div><div><h3>{{ 'general.links' | t }}</h3><a href="{{ routes.all_products_collection_url }}">{{ 'general.browse' | t }}</a><a href="{{ routes.account_url }}">{{ 'general.account' | t }}</a><a href="{{ routes.cart_url }}">{{ 'general.cart' | t }}</a></div><div><h3>{{ 'general.policies' | t }}</h3>{% for policy in shop.policies %}{% if policy.body != blank %}<a href="{{ policy.url }}">{{ policy.title | escape }}</a>{% endif %}{% endfor %}</div></div></footer>
+{% schema %}
+{"name": "Footer", "settings": []}
+{% endschema %}

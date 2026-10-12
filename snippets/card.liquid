@@ -1,0 +1,3 @@
+{% doc %}Renders a product card.
+@param {product} product - Product to display
+{% enddoc %}<a class="card" href="{{ product.url }}"><div class="photo">{% if product.featured_image %}{{ product.featured_image | image_url: width: 500 | image_tag: loading: 'lazy', widths: '250,500', sizes: '(max-width: 600px) 50vw, 25vw' }}{% else %}{{ 'product-1' | placeholder_svg_tag }}{% endif %}{% unless product.available %}<span class="badge">{{ 'general.sold' | t }}</span>{% endunless %}</div><div class="info"><h3>{{ product.title | escape }}</h3><div class="price">{{ product.price | money }}{% if product.compare_at_price > product.price %}<del>{{ product.compare_at_price | money }}</del>{% endif %}</div></div></a>

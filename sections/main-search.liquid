@@ -1,0 +1,4 @@
+<div class="wrap section"><h1>{{ 'general.results' | t }}: {{ search.terms | escape }}</h1>{% paginate search.results by 24 %}<div class="grid">{% for item in search.results %}{% if item.object_type == 'product' %}{% render 'card', product: item %}{% endif %}{% endfor %}</div>{{ paginate | default_pagination }}{% endpaginate %}</div>
+{% schema %}
+{"name": "Main Search", "settings": []}
+{% endschema %}

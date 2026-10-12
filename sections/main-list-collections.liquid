@@ -1,0 +1,4 @@
+<div class="wrap section"><h1>{{ 'general.browse' | t }}</h1><div class="grid">{% for collection in collections %}<a class="card" href="{{ collection.url }}"><div class="photo">{% if collection.image %}{{ collection.image | image_url: width: 500 | image_tag: loading: 'lazy' }}{% else %}{{ 'collection-1' | placeholder_svg_tag }}{% endif %}</div><div class="info"><h2>{{ collection.title | escape }}</h2></div></a>{% endfor %}</div></div>
+{% schema %}
+{"name": "Main List Collections", "settings": []}
+{% endschema %}
